@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<blockquote style="color: green;">@ViewBag.SuccessfullyRegistered</blockquote>
+
+<h2>Welcome @Html.Raw(User.Identity.Name)</h2>
+
+<p>To view a list of transactions, please click on the "View Transactions" link above.</p>
+

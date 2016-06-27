@@ -1,0 +1,100 @@
+﻿@model IEnumerable<PayPal.TransactionRecord>
+
+@{
+    ViewBag.Title = "ViewTransactions";
+}
+
+<h2>Transaction Records</h2>
+
+<div class="container-fluid">
+
+    <div class="row" style="font-weight: 700;">
+        <div class="col-xs-4 hidden-sm hidden-md hidden-lg">
+            @Html.DisplayNameFor(model => model.txTime)
+        </div>
+        <div class="col-xs-3 hidden-sm hidden-md hidden-lg">
+            @Html.DisplayNameFor(model => model.firstName)
+        </div>
+        <div class="col-xs-3 hidden-sm hidden-md hidden-lg">
+            @Html.DisplayNameFor(model => model.lastName)
+        </div>
+        <div class="col-xs-2 hidden-sm hidden-md hidden-lg" style="text-align: center;">
+            @Html.DisplayNameFor(model => model.totalTickets)
+        </div>
+    </div>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="row" style="line-height: 20px;">
+            <div class="col-xs-4 hidden-sm hidden-md hidden-lg">
+                @Html.DisplayFor(modelItem => item.txTime)
+            </div>
+            <div class="col-xs-3 hidden-sm hidden-md hidden-lg">
+                @Html.DisplayFor(modelItem => item.firstName)
+            </div>
+            <div class="col-xs-3 hidden-sm hidden-md hidden-lg" style="text-align: center;">
+                @Html.DisplayFor(modelItem => item.lastName)
+            </div>
+            <div class="col-xs-2 hidden-sm hidden-md hidden-lg" style="text-align: center;">
+                @Html.DisplayFor(modelItem => item.totalTickets)
+            </div>
+        </div>
+
+    }
+
+</div>
+
+<div class="container-fluid">
+
+    <div class="row" style="line-height: 30px;">
+        <div style="font-weight: 700; padding-bottom: 10px;">
+            <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+                @Html.DisplayNameFor(model => model.txTime)
+            </div>
+            <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+                @Html.DisplayNameFor(model => model.firstName)
+            </div>
+            <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+                @Html.DisplayNameFor(model => model.lastName)
+            </div>
+            <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+                @Html.DisplayNameFor(model => model.sessionID)
+            </div>
+            <div class="hidden-xs col-sm-2 col-md-2 col-lg-2" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.totalTickets)
+            </div>
+            <div class="hidden-xs col-sm-2 col-md-2 col-lg-2" align="right" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.amount)
+            </div>
+         </div>
+
+                @foreach (var item in Model)
+            {
+
+                    <div class="hidden-xs hidde-sm col-md-2 col-lg-2">
+                        @Html.DisplayFor(modelItem => item.txTime)
+                    </div>
+                    <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+                        @Html.DisplayFor(modelItem => item.firstName)
+                    </div>
+                    <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+                        @Html.DisplayFor(modelItem => item.lastName)
+                    </div>
+                    <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+                        @Html.DisplayFor(modelItem => item.sessionID)
+                    </div>
+                    <div class="hidden-xs col-sm-2 col-md-2 col-lg-2" style="text-align: right;">
+                        @Html.DisplayFor(modelItem => item.totalTickets)
+                    </div>
+                    <div align="right" class="hidden-xs col-sm-2 col-md-2 col-lg-2" style="text-align: right;">
+                        @Html.DisplayFor((modelItem => item.amount))
+                    </div>
+
+                }
+
+
+            </div>
+
+
+</div>
